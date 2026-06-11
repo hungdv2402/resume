@@ -9,15 +9,16 @@
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
 
-\usepackage[scaled]{helvet}
-\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{fontspec}
+\setmainfont{Montserrat}
 
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
@@ -43,8 +44,6 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generated PDF is machine readable/ATS parsable
-\pdfgentounicode=1
 
 %-------------------------
 % Custom commands
@@ -78,7 +77,7 @@
 
 \newcommand{\resumeItemPlain}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{0pt}}
   }
 }
 
@@ -98,52 +97,28 @@
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Duong Viet Hung} & Email: \href{mailto:hung.duongviet2402@gmail.com}{hung.duongviet2402@gmail.com}\\
-  Thuong Tin, Hanoi & Mobile: \href{tel:+84979721402}{0979721402} \\
-\end{tabular*}
+\begin{minipage}[c]{0.75\textwidth}
+  \textbf{\Huge Dương Viết Hưng} \\[8pt]
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{} p{3cm} l @{}}
+    \textbf{Date of birth} & Feb 02, 1999 \\
+    \textbf{Phone} & 0979721402 \\
+    \textbf{Email} & \href{mailto:hung.duongviet2402@gmail.com}{hung.duongviet2402@gmail.com} \\
+    \textbf{Address} & Thường Tín, Hà Nội \\
+  \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.2\textwidth}
+  \includegraphics[width=\linewidth]{avt.jpg}
+\end{minipage}
 
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Academy of Cryptography Techniques}{Vietnam}
-      {Major: Information Security}{2017 -- 2023}
-  \resumeSubHeadingListEnd
-
-
-%-----------EXPERIENCE-----------------
-\section{Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {NAL Viet Nam}{Hanoi, Vietnam}
-      {Mobile Developer, Front End Developer}{2 years 8 months $\cdot$ Oct 2023 -- Present}
-
-    \resumeSubheading
-      {NCCPLUS}{Hanoi, Vietnam}
-      {Mobile Developer, Front End Developer}{4 years $\cdot$ Dec 2019 -- Oct 2023}
-
-    \vspace{6pt}
-    \item[]\small\textbf{\textit{Main responsibilities summary}}\vspace{-7pt}
-
-    \resumeItemListStart
-      \resumeItemPlain{5+ years of experience developing mobile applications using React Native and Expo.}
-      \resumeItemPlain{Published apps on Google Play Store and Apple App Store.}
-      \resumeItemPlain{Set up CI/CD pipelines for mobile applications.}
-      \resumeItemPlain{Trained intern-level members in React Native development.}
-      \resumeItemPlain{Analyzed software project requirements and planned development tasks.}
-      \resumeItemPlain{Planned and estimated timelines for new mobile applications.}
-      \resumeItemPlain{Experienced working with Agile/Scrum methodology.}
-      \resumeItemPlain{Wrote unit tests and clean code, emphasizing testing to ensure features function correctly.}
-      \resumeItemPlain{Optimized mobile performance for faster loading times and smoother user experience.}
-      \resumeItemPlain{Reviewed code written by others and maintained high code quality standards.}
-      \resumeItemPlain{Supported other developers by sharing knowledge and aiding in development tasks.}
-      \resumeItemPlain{Collaborated with designers, product managers, BA team, and stakeholders to translate requirements into technical solutions.}
-      \resumeItemPlain{Able to communicate in English.}
-    \resumeItemListEnd
-
+      {Academy of Cryptography Techniques}{2017 - 2023}
+      {Major: Information Security}{}
   \resumeSubHeadingListEnd
 
 
@@ -151,69 +126,126 @@
 \section{Skills}
   \resumeSubHeadingListStart
     \item{
-      \textbf{Tech Stack}{: React Native, ReactJS, Flutter, Ionic, HTML, CSS, NestJS}
+      \textbf{Tech Stack}{: React Native, ReactJS, Flutter, Ionic, NextJS, VueJS, NestJS, TypeScript}\vspace{-2pt}
     }
     \item{
-      \textbf{Languages}{: English}
+      \textbf{Foreign Languages}{: English}
+    }
+    \item{
+      \textbf{IDE}{: Xcode, Android Studio, VSCode, Antigravity}\vspace{-2pt}
+    }
+    \item{
+      \textbf{Source Code Management}{: Git, GitHub, CodeCommit, GitLab, Bitbucket}\vspace{-2pt}
+    }
+    \item{
+      \textbf{Task Management}{: Jira, Trello, Azure DevOps, GitLab}\vspace{-2pt}
     }
   \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {NAL Vietnam}{2 years 8 months $\cdot$ Oct 2023 -- Present}
+      {Mobile Developer, Front-end Developer}{}
+
+    \resumeSubheading
+      {NCCPLUS}{4 years $\cdot$ Dec 2019 -- Oct 2023}
+      {Mobile Developer, Front-end Developer}{}
+
+    \vspace{6pt}
+    \item[]\small\textbf{\textit{Main responsibilities summary}}\vspace{-7pt}
+
+    \resumeItemListStart
+      \resumeItemPlain{Engineered mobile applications for 6 years utilizing React Native and Expo.}
+      \resumeItemPlain{Built dynamic web interfaces over 3 years with ReactJS, VueJS, and Angular.}
+      \resumeItemPlain{Accelerated Flutter and NestJS development for nearly 1 year through AI-assisted vibe-coding.}
+      \resumeItemPlain{Published apps on Google Play Store and Apple App Store.}
+      \resumeItemPlain{Set up CI/CD pipelines for mobile applications.}
+      \resumeItemPlain{Trained intern-level members in React Native development.}
+      \resumeItemPlain{Optimized mobile performance for faster loading times and smoother user experience.}
+      \resumeItemPlain{Wrote unit tests and clean code, emphasizing testing to ensure features function correctly.}
+      \resumeItemPlain{Experienced working with Agile/Scrum methodologies.}
+      \resumeItemPlain{Supported other developers by sharing knowledge and aiding in development tasks.}
+      \resumeItemPlain{Collaborated with designers, product managers, business analysts, and stakeholders to translate requirements into technical solutions.}
+      \resumeItemPlain{Intermediate proficiency in English.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
 
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Mobicon} \small\textit{- Journey tracking and management system}\\
-        \textit{Technologies: React Native, Expo, Google Map, Scan QR code, SocketIO, Redux Toolkit, Typescript, Axios.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Legacy} \small\textit{- Management Web System} & \footnotesize\textit{5 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: NextJS, NuxtJS, AI-assisted tools, TailwindCSS, Vuetify, AWS.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Super App} \small\textit{- Utility Mobile App} \\
-        \textit{Technologies: Flutter, Fastlane, Gitlab CI/CD, Cloud Scheduler, Firebase Cloud Function, Firestore.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Super App} \small\textit{- Utilities Mobile App} & \footnotesize\textit{5 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: Monorepo Architecture, Flutter, AI-assisted tools, Fastlane, GitLab CI/CD, Cloud Scheduler, Firebase Cloud Functions, Firestore.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Coca} \small\textit{- E-commerce Mobile App} \\
-        \textit{Technologies: React Native, Expo, Customerio, Remix Framework, Redux Toolkit, Typescript, GraphQL.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Mobicon} \small\textit{- Journey Tracking and Management Mobile App} & \footnotesize\textit{8 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Expo, QR Code Scanning, Socket.IO, Redux Toolkit, TypeScript, Axios.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{IOT Finggal Link} \small\textit{- Medical and management system} \\
-        \textit{Technologies: React Native, ReactJS, Hookstate, Typescript, Axios, Firebase.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Coca} \small\textit{- E-commerce Mobile App} & \footnotesize\textit{14 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Expo, Unisize, Shopify, Remix, Redux Toolkit, TypeScript, GraphQL.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Trudi} \small\textit{- Management System} \\
-        \textit{Technologies: Angular, Ionic Capacitor Angular, Electron, NodeJS, AWS, Firebase, Twilio.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{IoT Finggal Link} \small\textit{- Medical and Management System} & \footnotesize\textit{11 months(2 months on-site in JP)} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, ReactJS, Hookstate, TypeScript, Axios, Firebase.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Hough Rapid} \small\textit{- Medical Mobile App} \\
-        \textit{Technologies: React Native, Redux, Apple Wallet, Typescript, Axios, Firebase Cloud Message.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Trudi} \small\textit{- Management System} & \footnotesize\textit{5 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: Angular, Ionic Capacitor Angular, Electron, Node.js, AWS, Firebase, Twilio.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Cheer Collective} \small\textit{- Social Media Mobile App} \\
-        \textit{Technologies: React Native, Redux-saga, Typescript, Firebase Cloud Message, Fastlane.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Hough Rapid} \small\textit{- Medical Mobile App} & \footnotesize\textit{7 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux, Apple Wallet, TypeScript, Axios, Firebase Cloud Messaging.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Gig Grafter} \small\textit{- Management System} \\
-        \textit{Technologies: React Native, Redux-saga, ReactJS, Typescript, Jest, Restful API, Firebase.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Cheer Collective} \small\textit{- Social Media Mobile App} & \footnotesize\textit{10 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux-Saga, TypeScript, Firebase Cloud Messaging, Fastlane.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
     }
     \item{
       \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Maxarel} \small\textit{- E-commerce Mobile App} \\
-        \textit{Technologies: React Native, Redux-saga, Restful API, Firebase Cloud Message, Google Map API.}
-      \end{tabular*}\vspace{-4pt}
+        \textbf{Gig Grafter} \small\textit{- Management System} & \footnotesize\textit{9 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux-Saga, ReactJS, TypeScript, Jest, RESTful API, Firebase.} \\
+        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
+      \end{tabular*}\vspace{-16pt}
+    }
+    \item{
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{Maxarel} \small\textit{- E-commerce Mobile App} & \footnotesize\textit{6 months} \\
+        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux-Saga, RESTful API, Firebase Cloud Messaging, Google Maps API.} \\
+      \end{tabular*}\vspace{-16pt}
     }
   \resumeSubHeadingListEnd
 

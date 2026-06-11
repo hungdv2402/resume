@@ -5,7 +5,7 @@
   "latex-workshop.latex.outDir": "%DIR%",
   "latex-workshop.latex.tools": [
     {
-      "name": "docker-pdflatex",
+      "name": "docker-lualatex",
       "command": "docker",
       "args": [
         "run",
@@ -14,7 +14,7 @@
         "-v",
         "%DIR%:/data",
         "latex",
-        "pdflatex",
+        "lualatex",
         "-synctex=1",
         "-interaction=nonstopmode",
         "-file-line-error",
@@ -24,9 +24,11 @@
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "docker-pdflatex",
-      "tools": ["docker-pdflatex"]
+      "name": "docker-lualatex",
+      "tools": [
+        "docker-lualatex"
+      ]
     }
   ],
-  "latex-workshop.latex.recipe.default": "docker-pdflatex"
+  "latex-workshop.latex.recipe.default": "docker-lualatex"
 }
