@@ -1,6 +1,6 @@
 import re
 
-with open('/Users/hung.duongviet/Documents/MyDocs/resume/sourabh_bajaj_resume.tex', 'r') as f:
+with open('/Users/hung.duongviet/Documents/MyDocs/resume/Duong-Viet-Hung-RN.tex', 'r') as f:
     content = f.read()
 
 # We want to replace:
@@ -20,7 +20,7 @@ def replacer(match):
 # Need to make sure we don't double-replace the one that already has \multicolumn
 new_content = re.sub(r'([ \t]*Technologies:[^\n]+)\n[ \t]*\\end\{tabular\*}\\vspace\{-4pt\}', replacer, content)
 
-with open('/Users/hung.duongviet/Documents/MyDocs/resume/sourabh_bajaj_resume.tex', 'w') as f:
+with open('/Users/hung.duongviet/Documents/MyDocs/resume/Duong-Viet-Hung-RN.tex', 'w') as f:
     f.write(new_content)
 
 print("Done")

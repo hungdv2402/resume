@@ -1,6 +1,6 @@
 import re
 
-with open('/Users/hung.duongviet/Documents/MyDocs/resume/sourabh_bajaj_resume.tex', 'r') as f:
+with open('/Users/hung.duongviet/Documents/MyDocs/resume/Duong-Viet-Hung-RN.tex', 'r') as f:
     content = f.read()
 
 # We only want to modify lines inside the Projects section
@@ -23,7 +23,7 @@ new_projects_content = re.sub(r'^[ \t]*\\textbf\{.*\\\\$', add_duration, project
 
 new_content = content[:projects_start] + new_projects_content + content[projects_end:]
 
-with open('/Users/hung.duongviet/Documents/MyDocs/resume/sourabh_bajaj_resume.tex', 'w') as f:
+with open('/Users/hung.duongviet/Documents/MyDocs/resume/Duong-Viet-Hung-RN.tex', 'w') as f:
     f.write(new_content)
 
 print("Done")
