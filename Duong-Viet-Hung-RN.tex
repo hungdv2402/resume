@@ -14,11 +14,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
-\usepackage{tabularx}
-
 
 \usepackage{fontspec}
-\setmainfont{Montserrat}
+\setmainfont{Montserrat}[LetterSpace=1.8, WordSpace=1.2]
 
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
@@ -47,20 +45,6 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
-}
-
-% Just in case someone needs a heading that does not need to be in a list
-\newcommand{\resumeHeading}[4]{
-    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small #3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -69,10 +53,24 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small #1} & \textit{\small #2} \\
+\newcommand{\resumeProjectHeading}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \small\textit{#2} & \footnotesize\textit{#3} \\
+      \multicolumn{2}{p{0.97\textwidth}}{\footnotesize #4} \\
     \end{tabular*}\vspace{-5pt}
+    #5
+    \vspace{8pt}
+    {\color[gray]{0.8}\hrule height 0.4pt}
+}
+
+\newcommand{\resumeProjectHeadingLast}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \small\textit{#2} & \footnotesize\textit{#3} \\
+      \multicolumn{2}{p{0.97\textwidth}}{\footnotesize #4} \\
+    \end{tabular*}\vspace{-5pt}
+    #5
 }
 
 \newcommand{\resumeItemPlain}[1]{
@@ -80,8 +78,6 @@
     {#1 \vspace{0pt}}
   }
 }
-
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -116,7 +112,7 @@
 \section{Professional Summary}
   {\small
     \linespread{1.15}\selectfont
-    \hspace*{1.5em}Dedicated Software Engineer with over 6 years of experience in mobile and web development. I have more than 5 years of experience building cross-platform mobile apps using React Native and Expo, and around 3 years developing web applications with ReactJS and VueJS. Over the past year, I have actively adopted AI-assisted tools to speed up and optimize projects built with Flutter, NextJS, and NuxtJS. I can handle the full lifecycle of mobile applications, including setting up CI/CD pipelines, managing App Store and Google Play deployments, optimizing load times, and writing unit tests.\par
+    \hspace*{1.5em}Dedicated Software Engineer with over 6 years of experience in mobile and web development. I have more than 5 years of experience building cross-platform mobile apps using React Native and Expo, and around 3 years developing web applications with ReactJS and VueJS. Over the past year, I have actively adopted AI-assisted tools to speed up and optimize projects built with Flutter and NestJS. I can handle the full lifecycle of mobile applications, including setting up CI/CD pipelines, managing App Store and Google Play deployments, optimizing load times, and writing unit tests.\par
   }
 
 
@@ -124,16 +120,13 @@
 \section{Technical Skills}
   \resumeSubHeadingListStart
     \item\small{
-      \textbf{Tech Stack}{: React Native, ReactJS, Flutter, Ionic, NextJS, VueJS, NestJS, TypeScript}\vspace{-2pt}
+      \textbf{Tech Stack}{: React Native, Flutter, ReactJS, Nestjs, JavaScript, TypeScript, HTML/CSS}\vspace{-2pt}
     }
     \item\small{
-      \textbf{IDE}{: Xcode, Android Studio, VSCode, Antigravity}\vspace{-2pt}
-    }
+      \textbf{Developer Tools}{: Xcode, Android Studio, VSCode, Antigravity IDE, Git, Firebase}\vspace{-2pt}
+      }
     \item\small{
-      \textbf{Source Code Management}{: Git, GitHub, CodeCommit, GitLab, Bitbucket}\vspace{-2pt}
-    }
-    \item\small{
-      \textbf{Task Management}{: Jira, Trello, Azure DevOps, GitLab}\vspace{-2pt}
+      \textbf{Databases}{: PostgreSQL}\vspace{-2pt}
     }
   \resumeSubHeadingListEnd
 
@@ -147,7 +140,7 @@
       {Mobile Developer, Front-end Developer}{}
       \resumeItemListStart
         \resumeItemPlain{Developed cross-platform mobile applications utilizing \textbf{React Native, Expo, and Flutter}, and modern web applications using \textbf{ReactJS, Remix, NextJS, and NuxtJS}.}
-        \resumeItemPlain{Established automated \textbf{CI/CD pipelines} for mobile application projects, achieving a \textbf{50\% reduction} in build and deployment times compared to manual methods, and successfully releasing applications to the \textbf{App Store}.}
+        \resumeItemPlain{Established automated \textbf{CI/CD pipelines} for a mobile application project, achieving a \textbf{50\% reduction} in build and deployment times compared to manual methods, and successfully releasing applications to the \textbf{App Store}.}
         \resumeItemPlain{Mentored and guided \textbf{3 intern-level developers}, with \textbf{1 successfully transitioning} into a full-time contracted employee.}
         \resumeItemPlain{Optimized \textbf{mobile performance} for faster loading times and a smoother user experience.}
         \resumeItemPlain{Wrote unit tests and followed \textbf{clean code principles}, emphasizing testing to ensure features function correctly.}
@@ -170,79 +163,48 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Legacy} \small\textit{- Management Web System} & \footnotesize\textit{5 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: NextJS, NuxtJS, AI-assisted tools, TailwindCSS, Vuetify, AWS.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Super App} \small\textit{- Utilities Mobile App} & \footnotesize\textit{5 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: Monorepo Architecture, Flutter, AI-assisted tools, Fastlane, GitLab CI/CD, Cloud Scheduler, Firebase Cloud Functions, Firestore.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Mobicon} \small\textit{- Journey Tracking and Management Mobile App} & \footnotesize\textit{8 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Expo, QR Code Scanning, Socket.IO, Redux Toolkit, TypeScript, Axios.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Coca} \small\textit{- E-commerce Mobile App} & \footnotesize\textit{14 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Expo, Unisize, Shopify, Remix, Redux Toolkit, TypeScript, GraphQL.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{IoT Finggal Link} \small\textit{- Medical and Management System} & \footnotesize\textit{11 months(2 months on-site in JP)} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, ReactJS, Hookstate, TypeScript, Axios, Firebase.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Trudi} \small\textit{- Management System} & \footnotesize\textit{5 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: Angular, Ionic Capacitor Angular, Electron, Node.js, AWS, Firebase, Twilio.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Hough Rapid} \small\textit{- Medical Mobile App} & \footnotesize\textit{7 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux, Apple Wallet, TypeScript, Axios, Firebase Cloud Messaging.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Cheer Collective} \small\textit{- Social Media Mobile App} & \footnotesize\textit{10 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux-Saga, TypeScript, Firebase Cloud Messaging, Fastlane.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Gig Grafter} \small\textit{- Management System} & \footnotesize\textit{9 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux-Saga, ReactJS, TypeScript, Jest, RESTful API, Firebase.} \\
-        \noalign{\vspace{3pt}\color[gray]{0.8}\hrule height 0.4pt\normalcolor\vspace{3pt}}
-      \end{tabular*}\vspace{-16pt}
-    }
-    \item{
-      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Maxarel} \small\textit{- E-commerce Mobile App} & \footnotesize\textit{6 months} \\
-        \multicolumn{2}{p{0.97\textwidth}}{Technologies: React Native, Redux-Saga, RESTful API, Firebase Cloud Messaging, Google Maps API.} \\
-      \end{tabular*}\vspace{-16pt}
-    }
+    \resumeProjectHeading
+      {Super App}{- Utilities Mobile App}
+      {Jul 2025 - Dec 2025}
+      {Flutter, Fastlane, GitLab CI/CD, Firebase(Scheduler, Functions, Firestore).}
+      {\resumeItemListStart
+        \resumeItemPlain{Adopted a \textbf{Monorepo} architecture to enable independent development of application features and screens across separate sub-repositories.}
+        \resumeItemPlain{Developed the "Upcoming Birthdays" feature utilizing \textbf{Node.js} to ingest data from Google Spreadsheets into \textbf{Firestore}, scheduled and triggered via \textbf{Cloud Scheduler}.}
+        \resumeItemPlain{Established \textbf{CI/CD pipelines} utilizing \textbf{GitLab CI} and \textbf{Fastlane} to automate application deployment to both the \textbf{App Store} and \textbf{Google Play}.}
+      \resumeItemListEnd}
+
+    \resumeProjectHeading
+      {Coca}{- E-commerce Mobile App}
+      {Oct 2023 - May 2025}
+      {React Native, Expo, Unisize, Shopify, Remix, GraphQL.}
+      {\resumeItemListStart
+        \resumeItemPlain{Utilized \textbf{Expo}, \textbf{GraphQL}, and \textbf{Shopify API} to develop core e-commerce features including Search, Cart, Home, Product Details, and Push Notifications.}
+        \resumeItemPlain{Optimized app performance, achieving a \textbf{30\% reduction} in initial load times for the Dashboard and Product Search screens.}
+        \resumeItemPlain{Integrated the \textbf{Unisize SDK native module} into the application to enable clothes size recommendation based on user height, weight, and personal preferences.}
+        \resumeItemPlain{Implemented push notification features utilizing \textbf{Firebase Cloud Messaging (FCM)} and Apple Push Notification service (\textbf{APNs}).}
+      \resumeItemListEnd}
+
+    \resumeProjectHeading
+      {Tuxas System}{- E-commerce Mobile App}
+      {Feb 2023 - May 2023}
+      {React Native, NestJS, PostgreSQL, Prisma, VNPay sandbox.}
+      {\resumeItemListStart
+        \resumeItemPlain{Utilized \textbf{React Native} to build core application features including Authentication (Login, Sign Up), Product Search, Cart management, and Payment integration.}
+        \resumeItemPlain{Developed a secure backend utilizing \textbf{NestJS}, \textbf{Prisma ORM}, and a \textbf{PostgreSQL} database, building over \textbf{20+ RESTful APIs}.}
+        \resumeItemPlain{Integrated \textbf{VNPay} (sandbox mode) to enable secure online payment features within the mobile application.}
+      \resumeItemListEnd}
+
+    \resumeProjectHeadingLast
+      {Hough Rapid}{- Medical Mobile App}
+      {Jan 2022 - Jul 2022}
+      {React Native, Redux, Apple Wallet, Firebase Cloud Messaging.}
+      {\resumeItemListStart
+        \resumeItemPlain{Designed the project codebase utilizing \textbf{React Native} and \textbf{Redux Toolkit}, and developed key features including Testing history, Testing tutorials, and YouTube Video integration.}
+        \resumeItemPlain{Developed a feature to integrate COVID-19 test result certificates into \textbf{Apple Wallet} utilizing \textbf{passkit-generator} on \textbf{Node.js} and \textbf{Firebase Cloud Functions}.}
+      \resumeItemListEnd}
   \resumeSubHeadingListEnd
 
 
-\vspace{4pt}
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
